@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="PDFAssistant.View.UserControls.MergePDF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PDFAssistant.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" FontWeight="Bold" Foreground="#FFABE65A" HorizontalAlignment="Center" VerticalAlignment="Center" >Drop Your PDFs Here!</Label>
+                
+            <Label Content="Output:"  Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBox x:Name="output_TextBox" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="50,0,0,0" Height="20"/>
+
+        </Grid>
+        
+        
+
+        
+
+        <ListBox x:Name="pdfs_listBox" Grid.Column="1" Grid.Row="1" AllowDrop="True" Drop="pdfs_listBox_Drop" Opacity="0.995" Background="{x:Null}" KeyDown="pdfs_listBox_KeyDown">
+            <ListBox.BorderBrush>
+                <SolidColorBrush Color="#FF020921" Opacity="0.5"/>
+            </ListBox.BorderBrush>
+        </ListBox>
+
+        <Button x:Name="btn_merge" Grid.Column="1" Grid.Row="2" Background="#FF4699B2" Margin="20" FontWeight="Bold" Content="Merge" Foreground="#FFB0BD2F" Visibility="Hidden" Click="btn_merge_Click"></Button>
+    </Grid>
+
+
+
+</UserControl>

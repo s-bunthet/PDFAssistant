@@ -1,0 +1,36 @@
+﻿<Window x:Class="PDFAssistant.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PDFAssistant" xmlns:UserControls="clr-namespace:PDFAssistant.View.UserControls"
+        mc:Ignorable="d"
+        Title="PDF Assistant" Height="465" Width="942">
+    <Grid x:Name="GridMainWindw" Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="side_bar" Width="100" MinWidth="150"></ColumnDefinition>
+            <ColumnDefinition x:Name="content_block" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Sidebar-->
+        <Grid Grid.Column="0" Background="AntiqueWhite">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="btn_merge_pdf" Grid.Row="0" Content="Merge PDF" BorderThickness="0" Click="btn_merge_pdf_Click"></Button>
+            <Button x:Name="btn_extract_pages" Grid.Row="1" Content="Extract Pages" BorderThickness="0" Click="btn_extract_pages_Click"></Button>
+            <Button Grid.Row="2" Content="File &lt;=&gt; Base64" BorderThickness="0"></Button>
+            <Button Grid.Row="3" Content="Compress" BorderThickness="0"></Button>
+            <Button Grid.Row="4" Content="&lt;File&gt; to PDF" BorderThickness="0"></Button>
+        </Grid>
+
+        <UserControls:Welcome x:Name="user_control_welcome" Grid.Column="1" Visibility="Visible"></UserControls:Welcome>
+        <UserControls:MergePDF x:Name="user_control_merge_pdf" Grid.Column="1" Visibility="Collapsed"></UserControls:MergePDF>
+        <UserControls:ExtractPages x:Name="user_control_extract_pages" Grid.Column="1" Visibility="Collapsed"></UserControls:ExtractPages>
+    </Grid>
+</Window>
