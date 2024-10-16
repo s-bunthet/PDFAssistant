@@ -7,6 +7,8 @@
 	* Convert a file (image, html, word) to PDF
 	* Compress a PDF to reduce it size 
 	* OCR a scanned PDF 
+		
+	![image](./View/Images/pdfAssistantOverview.png)
 
 
 * Technologies

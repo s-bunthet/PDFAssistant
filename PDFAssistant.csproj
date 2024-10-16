@@ -147,5 +147,8 @@
   <ItemGroup>
     <Resource Include="View\Images\upload.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\pdfAssistantOverview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
