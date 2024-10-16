@@ -25,24 +25,28 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" FontWeight="Bold" Foreground="#FFABE65A" HorizontalAlignment="Center" VerticalAlignment="Center" >Drop Your PDFs Here!</Label>
-                
-            <Label Content="Output:"  Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
-            <TextBox x:Name="output_TextBox" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="50,0,0,0" Height="20"/>
+            <!-- <Label Grid.Row="0" FontWeight="Bold" Foreground="#FFABE65A" HorizontalAlignment="Center" VerticalAlignment="Center" >Merge PDFs</Label> -->
+
+            <Label Content="Output:"  Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <TextBox x:Name="output_TextBox" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="50,0,0,0" Height="20" Background="#FF322F5B" Foreground="#FFEDE8E8" BorderBrush="BlueViolet"/>
 
         </Grid>
-        
-        
 
-        
 
-        <ListBox x:Name="pdfs_listBox" Grid.Column="1" Grid.Row="1" AllowDrop="True" Drop="pdfs_listBox_Drop" Opacity="0.995" Background="{x:Null}" KeyDown="pdfs_listBox_KeyDown">
+
+
+
+        <ListBox x:Name="pdfs_listBox" Grid.Column="1" Grid.Row="1" AllowDrop="True" Drop="pdfs_listBox_Drop" Opacity="0.995" Background="#FF322F5B" KeyDown="pdfs_listBox_KeyDown" Foreground="White">
             <ListBox.BorderBrush>
-                <SolidColorBrush Color="#FF020921" Opacity="0.5"/>
+                <SolidColorBrush Color="BlueViolet" Opacity="1"/>
             </ListBox.BorderBrush>
         </ListBox>
 
-        <Button x:Name="btn_merge" Grid.Column="1" Grid.Row="2" Background="#FF4699B2" Margin="20" FontWeight="Bold" Content="Merge" Foreground="#FFB0BD2F" Visibility="Hidden" Click="btn_merge_Click"></Button>
+        <Label x:Name="labelDragDrop" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFDEE6D3" FontSize="16" FontWeight="ExtraLight" FontFamily="Arial Black" >Drag and Drop Your PDFs Here!
+        </Label>
+
+        <Button x:Name="btn_merge" Grid.Column="1" Grid.Row="2" Margin="150,30,150,30" Content="Merge" Click="btn_merge_Click" BorderBrush="{x:Null}" Background="BlueViolet" Foreground="#FF150505"></Button>
+
     </Grid>
 
 

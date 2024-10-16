@@ -61,8 +61,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\UserControls\CompressPDF.xaml.cs">
+      <DependentUpon>CompressPDF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\ExtractPages.xaml.cs">
       <DependentUpon>ExtractPages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\FileAndBase64.xaml.cs">
+      <DependentUpon>FileAndBase64.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\FileToPdf.xaml.cs">
+      <DependentUpon>FileToPdf.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\MergePDF.xaml.cs">
       <DependentUpon>MergePDF.xaml</DependentUpon>
@@ -82,7 +91,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\UserControls\CompressPDF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UserControls\ExtractPages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\FileAndBase64.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\FileToPdf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,10 +139,14 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\Images\upload.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

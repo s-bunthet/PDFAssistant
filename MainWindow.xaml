@@ -6,14 +6,20 @@
         xmlns:local="clr-namespace:PDFAssistant" xmlns:UserControls="clr-namespace:PDFAssistant.View.UserControls"
         mc:Ignorable="d"
         Title="PDF Assistant" Height="465" Width="942">
-    <Grid x:Name="GridMainWindw" Margin="5">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightGreen"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="GridMainWindw" Margin="5" Background="#FF2C2B3A">
         <Grid.ColumnDefinitions>
             <ColumnDefinition x:Name="side_bar" Width="100" MinWidth="150"></ColumnDefinition>
             <ColumnDefinition x:Name="content_block" ></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
+
         <!-- Sidebar-->
-        <Grid Grid.Column="0" Background="AntiqueWhite">
+        <Grid Grid.Column="0" Background="#FF322F5B" Margin="2,2,2,3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
@@ -22,15 +28,18 @@
                 <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button x:Name="btn_merge_pdf" Grid.Row="0" Content="Merge PDF" BorderThickness="0" Click="btn_merge_pdf_Click"></Button>
-            <Button x:Name="btn_extract_pages" Grid.Row="1" Content="Extract Pages" BorderThickness="0" Click="btn_extract_pages_Click"></Button>
-            <Button Grid.Row="2" Content="File &lt;=&gt; Base64" BorderThickness="0"></Button>
-            <Button Grid.Row="3" Content="Compress" BorderThickness="0"></Button>
-            <Button Grid.Row="4" Content="&lt;File&gt; to PDF" BorderThickness="0"></Button>
+            <Button x:Name="btn_merge_pdf" Grid.Row="0" Content="Merge PDF" Click="btn_merge_pdf_Click" Background="#FF322F5B" Margin="3" BorderBrush="{x:Null}" MouseEnter="btn_merge_pdf_MouseEnter" MouseLeave="btn_merge_pdf_MouseLeave" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+            <Button x:Name="btn_extract_pages" Grid.Row="1" Content="Extract Pages" BorderThickness="1,1,1,1" Click="btn_extract_pages_Click" Margin="3" Background="#FF322F5B" Foreground="#FFE6ECE5" BorderBrush="{x:Null}" MouseEnter="btn_extract_pages_MouseEnter" MouseLeave="btn_extract_pages_MouseLeave"/>
+            <Button x:Name="BtnFileAndBase64" Grid.Row="2" Content="File &lt;=&gt; Base64" BorderThickness="1,1,1,1" Click="BtnFileAndBase64_Click" BorderBrush="{x:Null}" Margin="3" Background="#FF322F5B" Foreground="#FFE6ECE5" MouseEnter="BtnFileAndBase64_MouseEnter" MouseLeave="BtnFileAndBase64_MouseLeave"></Button>
+            <Button x:Name="BtnCompressPDF" Grid.Row="3" Content="Compress" BorderThickness="1,1,1,1" Click="BtnCompressPDF_Click" Margin="3" Background="#FF322F5B" Foreground="#FFE6ECE5" BorderBrush="{x:Null}" MouseEnter="BtnCompressPDF_MouseEnter" MouseLeave="BtnCompressPDF_MouseLeave"></Button>
+            <Button x:Name="BtnFileToPdf" Grid.Row="4" Content="&lt;File&gt; to PDF" BorderThickness="1,1,1,1" Click="BtnFileToPdf_Click" Margin="3" Background="#FF322F5B" Foreground="#FFE6ECE5" BorderBrush="{x:Null}" MouseEnter="BtnFileToPdf_MouseEnter" MouseLeave="BtnFileToPdf_MouseLeave"></Button>
         </Grid>
 
-        <UserControls:Welcome x:Name="user_control_welcome" Grid.Column="1" Visibility="Visible"></UserControls:Welcome>
+        <UserControls:Welcome x:Name="user_control_welcome" Grid.Column="1" Visibility="Visible" BorderThickness="1,1,1,1"/>
         <UserControls:MergePDF x:Name="user_control_merge_pdf" Grid.Column="1" Visibility="Collapsed"></UserControls:MergePDF>
         <UserControls:ExtractPages x:Name="user_control_extract_pages" Grid.Column="1" Visibility="Collapsed"></UserControls:ExtractPages>
+        <UserControls:FileAndBase64 x:Name="user_control_file_and_base64" Grid.Column="1" Visibility="Collapsed"></UserControls:FileAndBase64>
+        <UserControls:CompressPDF x:Name="user_control_compress_pdf" Grid.Column="1" Visibility="Collapsed"></UserControls:CompressPDF>
+        <UserControls:FileToPdf x:Name="user_control_file_to_pdf" Grid.Column="1" Visibility="Collapsed"></UserControls:FileToPdf>
     </Grid>
 </Window>

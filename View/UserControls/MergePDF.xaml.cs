@@ -57,6 +57,8 @@ namespace PDFAssistant.View.UserControls
                 }
                 else
                 {
+                    labelDragDrop.Visibility = Visibility.Hidden;
+
                     if (pdfs_listBox.Items.Contains(pdfName))
                     {
                         MessageBox.Show("The file " + pdfName + " already exist! ", "Error");
@@ -80,7 +82,7 @@ namespace PDFAssistant.View.UserControls
         {
             // check if the output path is valid
             this.outputFilePath = output_TextBox.Text;
-            if (!outputFilePath.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
+            if (!this.outputFilePath.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
             {
                 MessageBox.Show("Invalid filename. Please enter a .pdf file path.", "Error");
             }
@@ -124,12 +126,12 @@ namespace PDFAssistant.View.UserControls
             catch (Exception ex)
             {
                 // show the error message 
-                MessageBox.Show("\"Error merging PDFs: \" + ex.Message", "Error");
+                MessageBox.Show("Error merging PDFs: " + ex.Message, "Error");
                 document.Close();
             }
 
             // Show the success message
-            MessageBox.Show("\"Error merging PDFs: \" + ex.Message", "Success");
+            MessageBox.Show("Merging Finished!", "Success");
 
         }
 

@@ -7,15 +7,32 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.4*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
 
-        <Label Content="File:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-        <ListBox x:Name="pdf_extract"  AllowDrop="True" Drop="pdf_extract_Drop" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="80,10,0,0" Height="26"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-        <Label Content="Pages:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0"/>
-        <TextBox Name="pages_box" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="80,50,0,0"/>
+        <Label Grid.Column="1" Grid.Row="1" Content="File:" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFF3EFEF" />
+        <TextBox Grid.Column="1" Grid.Row="1" x:Name="pdf_extract"  AllowDrop="True" Drop="pdf_extract_Drop" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Height="25" Margin="50,0,0,0" Background="#FF322F5B" BorderBrush="BlueViolet" Foreground="#FFF3F0F0"/>
+        <Button x:Name="btnUpload" Grid.Column="2" Grid.Row="1"  Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Margin="0,1,1,1" Click="btnUpload_Click">
+            <Image Source="../Images/upload.png"/>
+        </Button>
 
-        <Button x:Name="btn_extract" Content="Extract" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,100,0,0" Click="btn_extract_Click"/>
-        
+        <Label Grid.Column="1" Grid.Row="1" Content="Pages:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,30,0,0" Foreground="#FFF7F3F3"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Name="pages_box" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="25" Margin="50,30,0,0" Background="#FF322F5B" BorderBrush="BlueViolet" Foreground="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Text="Pages to extract (ex: 2 or 5-23 or 2,4-8,11-last or last)" LostFocus="pages_box_LostFocus" GotFocus="pages_box_GotFocus"/>
+
+        <Label Content="Output:"  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,60,0,0" Foreground="#FFE6E2E2"/>
+        <TextBox x:Name="output_TextBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="50,60,0,0" Height="25" Background="#FF322F5B" BorderBrush="BlueViolet" Foreground="#FFF5F1F1"/>
+
+        <Button Grid.Column="1" Grid.Row="1" x:Name="btn_extract" Content="Extract" Width="80" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Click="btn_extract_Click" Background="BlueViolet"/>
+
 
     </Grid>
 
