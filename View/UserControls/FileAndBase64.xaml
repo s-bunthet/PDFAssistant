@@ -7,6 +7,31 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">File And Base64</TextBox>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.7*"></RowDefinition>
+                <RowDefinition Height="0.2*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="1" Content="File:" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFF3EFEF" Padding="0" Height="25" VerticalContentAlignment="Center" />
+        <TextBox Grid.Column="1" Grid.Row="1" x:Name="fileToConvert" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Height="25" Margin="30,0,0,0" Background="#FF322F5B" BorderBrush="BlueViolet" Foreground="#FFF3F0F0"/>
+
+        <TextBox Grid.Column="1" Grid.Row="1" x:Name="base64TextBox" Text="Base 64" Foreground="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="0,40,0,0" Background="#FF322F5B" BorderBrush="BlueViolet"  IsReadOnly="True" FontSize="30"/>
+        <Button Grid.Column="1" Grid.Row="1" Height="25" Width="35" x:Name="copyBtn" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,10,0" Content="COPY" Background="BlueViolet" FontSize="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="BlueViolet" Foreground="Black" Visibility="Hidden" Click="copyBtn_Click"></Button>
+
+        <Button x:Name="btnUpload" Grid.Column="2" Grid.Row="1"  Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Margin="5,1,1,1" Click="btnUpload_Click">
+            <Image Source="../Images/upload.png"/>
+        </Button>
+
+        <Button Grid.Column="1" Grid.Row="2" x:Name="btnConvert" Content="Convert" Width="80" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top"  Click="btnConvert_Click" Background="BlueViolet" Margin="10"/>
+
+
+
     </Grid>
 </UserControl>

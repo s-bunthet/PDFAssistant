@@ -144,7 +144,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="View\Images\upload.png" />
   </ItemGroup>
